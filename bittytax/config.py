@@ -20,8 +20,8 @@ class Config(object):
     BITTYTAX_CONFIG = 'bittytax.conf'
     CACHE_DIR = os.path.join(BITTYTAX_PATH, 'cache')
 
-    FIAT_LIST = ['GBP', 'EUR', 'USD']
-    CRYPTO_LIST = ['BTC', 'ETH', 'XRP', 'LTC', 'BCH', 'USDT']
+    FIAT_LIST = ['AUD', 'USD']
+    CRYPTO_LIST = ['BTC', 'USDT', 'XRP', 'LTC', 'BCH', 'ETH']
 
     FORMAT_CSV = 'CSV'
     FORMAT_EXCEL = 'EXCEL'
@@ -44,7 +44,7 @@ class Config(object):
     DATA_SOURCE_CRYPTO = ['CryptoCompare', 'CoinGecko']
 
     DEFAULT_CONFIG = {
-        'local_currency': 'GBP',
+        'local_currency': 'AUD',
         'fiat_list': FIAT_LIST,
         'crypto_list': CRYPTO_LIST,
         'trade_asset_type': TRADE_ASSET_TYPE_PRIORITY,
