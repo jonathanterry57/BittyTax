@@ -126,7 +126,7 @@ class DataParser(object):
         row = [col.strip() for col in row]
         if config.debug:
             sys.stderr.write("%sheader: row[%s] TRY: %s\n" % (
-                Fore.YELLOW, row_num+1, cls.format_row(row)))
+                Fore.YELLOW, row_num+1, cls.format_row(row)))    
 
         parsers_reduced = [p for p in cls.parsers if len(p.header) == len(row)]
         for parser in parsers_reduced:
