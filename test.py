@@ -1,3 +1,5 @@
-import bittytax.bittytax
+from bittytax.conv.dataparser import DataParser
 
-x = bittytax.conv
+x = DataParser(DataParser.TYPE_EXPLORER,"BscScan (BSC Transactions)")
+
+print(x)

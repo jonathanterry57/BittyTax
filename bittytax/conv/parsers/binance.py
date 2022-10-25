@@ -127,7 +127,7 @@ def split_asset(amount):
 
 def parse_binance_deposits_withdrawals_crypto(data_row, _parser, **kwargs):
     row_dict = data_row.row_dict
-    data_row.timestamp = DataParser.parse_timestamp(data_row.row[0])
+    data_row.timestamp = DataParser.parse_timestamp(data_row.row[0], dayfirst=True)
 
     if row_dict['Status'] != "Completed":
         return
@@ -153,7 +153,7 @@ def parse_binance_deposits_withdrawals_crypto(data_row, _parser, **kwargs):
 
 def parse_binance_deposits_withdrawals_cash(data_row, _parser, **kwargs):
     row_dict = data_row.row_dict
-    data_row.timestamp = DataParser.parse_timestamp(row_dict['Date(UTC)'])
+    data_row.timestamp = DataParser.parse_timestamp(row_dict['Date(UTC)'], dayfirst=True)
 
     if row_dict['Status'] != "Successful":
         return
@@ -252,7 +252,7 @@ def make_trade(operation, tx_times, default_asset=''):
 
     for data_row in op_rows:
         if not data_row.parsed:
-            data_row.timestamp = DataParser.parse_timestamp(data_row.row_dict['UTC_Time'])
+            data_row.timestamp = DataParser.parse_timestamp(data_row.row_dict['UTC_Time'], dayfirst=True)
             data_row.parsed = True
 
             data_row.t_record = TransactionOutRecord(TransactionOutRecord.TYPE_TRADE,
@@ -272,7 +272,7 @@ def get_buy_quantity(op_rows):
 
     for data_row in op_rows:
         if Decimal(data_row.row_dict['Change']) > 0:
-            data_row.timestamp = DataParser.parse_timestamp(data_row.row_dict['UTC_Time'])
+            data_row.timestamp = DataParser.parse_timestamp(data_row.row_dict['UTC_Time'], dayfirst=True)
             data_row.parsed = True
 
             if not buy_found:
