@@ -122,11 +122,11 @@ DataParser(DataParser.TYPE_EXPLORER,
 
 # Same header as Etherscan
 #DataParser(DataParser.TYPE_EXPLORER,
-#           "BscScan (BEP-20 Tokens)",
-#           ['Txhash', 'UnixTimestamp', 'DateTime', 'From', 'To', 'Value', 'ContractAddress',
-#            'TokenName', 'TokenSymbol'],
-#           worksheet_name=WORKSHEET_NAME,
-#           row_handler=parse_bscscan_tokens)
+#        "BscScan (BEP-20 Tokens)",
+#        ['Txhash', 'UnixTimestamp', 'DateTime', 'From', 'To', 'Value', 'ContractAddress',
+#         'TokenName', 'TokenSymbol'],
+#        worksheet_name=WORKSHEET_NAME,
+#        row_handler=parse_bscscan_tokens)
 
 # Same header as Etherscan
 #DataParser(DataParser.TYPE_EXPLORER,
