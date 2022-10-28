@@ -14,15 +14,17 @@ df = pd.read_excel(r"C:\Users\jonat\OneDrive\Crypto\Crypto Transactions\Transact
 
 df['URL'] = "https://ftmscan.com/tx/"+df['Txhash']
 
-df['result'] = ""
+df['clipped'] = ""
+df['full'] = ""
 
 for i in range(0,504):
     page = get_data(df.loc[i]['URL'])
     soup = BeautifulSoup(page.content, "html.parser")
     try:
-        results = soup.find(id="wrapperContent").get_text().split("For ")
-        result = results[len(results)-1]
-        df.at[i,'result'] = result
+        results1 = soup.find(id="wrapperContent").get_text().split("For ")
+        clipped = results1[len(results1)-1]
+        df.at[i,'clipped'] = clipped
+        df.at[i,'full'] = soup.find(id="wrapperContent").get_text()
     except:
         continue
 
