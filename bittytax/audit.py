@@ -23,7 +23,8 @@ class AuditRecords(object):
                        desc="%saudit transaction records%s" % (Fore.CYAN, Fore.GREEN),
                        disable=bool(config.debug or not sys.stdout.isatty())):
             if config.debug:
-                print("%saudit: TR %s" % (Fore.MAGENTA, tr))
+                if tr is type(str):
+                    print("%saudit: TR %s" % (Fore.MAGENTA, tr))
             if tr.buy:
                 self._add_tokens(tr.wallet, tr.buy.asset, tr.buy.quantity)
 

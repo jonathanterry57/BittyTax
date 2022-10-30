@@ -163,7 +163,7 @@ class TransactionRow(object):
         TR.TYPE_GIFT_RECEIVED: [MAN, MAN, MAN, OPT, None, None, None, OPT, OPT, OPT],
         TR.TYPE_AIRDROP:       [MAN, MAN, MAN, OPT, None, None, None, OPT, OPT, OPT],
         TR.TYPE_WITHDRAWAL:    [MAN, None, None, None, MAN, MAN, OPT, OPT, OPT, OPT],
-        TR.TYPE_SPEND:         [MAN, None, None, None, OPT, OPT, OPT, OPT, OPT, OPT],
+        TR.TYPE_SPEND:         [MAN, None, None, None, MAN, MAN, OPT, OPT, OPT, OPT],
         TR.TYPE_GIFT_SENT:     [MAN, None, None, None, MAN, MAN, OPT, OPT, OPT, OPT],
         TR.TYPE_GIFT_SPOUSE:   [MAN, None, None, None, MAN, MAN, OPT, OPT, OPT, OPT],
         TR.TYPE_CHARITY_SENT:  [MAN, None, None, None, MAN, MAN, OPT, OPT, OPT, OPT],

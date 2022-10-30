@@ -13,7 +13,7 @@ import dateutil.tz
 from .version import __version__
 
 class Config(object):
-    TZ_LOCAL = dateutil.tz.gettz('Europe/London')
+    TZ_LOCAL = dateutil.tz.gettz('Australia/Sydney')
     TZ_UTC = dateutil.tz.UTC
 
     BITTYTAX_PATH = os.path.expanduser('~/.bittytax')
@@ -31,6 +31,8 @@ class Config(object):
     TAX_RULES_UK_COMPANY = ['UK_COMPANY_JAN', 'UK_COMPANY_FEB', 'UK_COMPANY_MAR', 'UK_COMPANY_APR',
                             'UK_COMPANY_MAY', 'UK_COMPANY_JUN', 'UK_COMPANY_JUL', 'UK_COMPANY_AUG',
                             'UK_COMPANY_SEP', 'UK_COMPANY_OCT', 'UK_COMPANY_NOV', 'UK_COMPANY_DEC']
+    TAX_RULES_AU = 'NZ'
+    TAX_RULES_FIFO = 'FIFO'
 
     TRADE_ASSET_TYPE_BUY = 0
     TRADE_ASSET_TYPE_SELL = 1
@@ -60,6 +62,8 @@ class Config(object):
         'data_source_fiat': DATA_SOURCE_FIAT,
         'data_source_crypto': DATA_SOURCE_CRYPTO,
         'coinbase_zero_fees_are_gifts': False,
+        'tax_rules' : TAX_RULES_FIFO,
+        'tax_fixed_rate': 33,
     }
 
     def __init__(self):
